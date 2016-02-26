@@ -1,4 +1,4 @@
-fname = "romeo.txt"
+fname = "mbox-short.txt"
 try:
 	fhand = open(fname)
 except:
@@ -8,6 +8,6 @@ except:
 for line in fhand:
 	words = line.split()
 	if len(words) > 0 and words[0] == "From":
-		print words[3]
+		print "good"
 	else:
 		continue
