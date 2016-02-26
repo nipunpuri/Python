@@ -1,4 +1,4 @@
-fname = "mbox-short.txt"
+fname = "romeo.txt"
 try:
 	fhand = open(fname)
 except:
