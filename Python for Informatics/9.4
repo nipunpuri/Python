@@ -1,0 +1,18 @@
+fname = "mbox-short.txt"
+fhand = open(fname)
+
+emails = dict()
+for line in fhand:
+    if line.startswith("From "):  ##There are some lines starting with "From :" to avoid double counting, search for lines that start with "From" and not "From: "
+        words = line.split()
+        email = words[1]
+        emails[email] = emails.get(email , 0) + 1
+        
+bigcount = None
+bigword = None
+for key in emails:
+    if bigcount == None or emails[key] > bigcount:
+        bigcount = emails[key]
+        bigword = key
+        
+print bigword , bigcount 
